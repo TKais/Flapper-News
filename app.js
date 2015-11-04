@@ -8,5 +8,14 @@ app.controller('MainCtrl', ['$scope', function($scope){
 	{title: 'Post 3', upvotes: 3},
 	{title: 'Post 4', upvotes: 2},
 	{title: 'Post 5', upvotes: 1}
-	]
+	];
+
+	$scope.addPost = function(){
+		if(!$scope.title || $scope.title === ''){
+			return;
+		} else {		
+			$scope.posts.push({title: $scope.title, upvotes:0});
+			$scope.title = '';
+		}
+	};
 }]);
