@@ -8,8 +8,8 @@
 <body ng-app="flapperNews" ng-controller="MainCtrl">
 	<div ng-repeat="post in posts | orderBy: 'upvotes'">
 		<span ng-click="incrementUpvotes(post)">^</span>
-		<h2>{{post.title}}</h2>
-		<p>{{post.link}}</p>
+		<a ng-show="post.link" href="{{post.link}}">{{post.title}}</a>
+		<span ng-hide="post.link">{{post.title}}</span>
 		Votes: {{post.upvotes}}
 	</div>
 	<br>
